@@ -78,3 +78,12 @@
   height: 34.75px;
   background-position: 36.69752421959096% 45.792307692307695%;
 }
+
+.icon--clear-view-escapes {
+height: 60px;
+}
+
+.icon--wifi,
+.icon--fire {
+height: 64px;
+}

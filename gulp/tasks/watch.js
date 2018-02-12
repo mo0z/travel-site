@@ -7,10 +7,14 @@ gulp.task('cssInject', ['styles'], function() {
   .pipe(browserSync.stream());
 });
 
+gulp.task('scriptsRefresh', ['scripts'], function() {
+  browserSync.reload();
+});
+
 gulp.task('watch', ['cssInject'], function() {
 
   browserSync.init({
-    notify: true,
+    notify: false,
     server: {
       baseDir: "app",
     },
@@ -20,6 +24,8 @@ gulp.task('watch', ['cssInject'], function() {
   gulp.watch('./app/index.html', browserSync.reload);
 
   gulp.watch('./app/assets/css/**/*.css', ['cssInject', browserSync.reload]);
+
+  gulp.watch('./app/assets/scripts/**/*.js', ['scriptsRefresh']);
 
 });
 
