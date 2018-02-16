@@ -23,7 +23,7 @@ gulp.task('watch', ['cssInject'], function() {
 
   gulp.watch('./app/index.html', browserSync.reload);
 
-  gulp.watch('./app/assets/css/**/*.css', ['cssInject', browserSync.reload]);
+  gulp.watch('./app/assets/styles/**/*.css', ['cssInject', browserSync.reload]);
 
   gulp.watch('./app/assets/scripts/**/*.js', ['scriptsRefresh']);
 
