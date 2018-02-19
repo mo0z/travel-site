@@ -84,6 +84,19 @@ height: 60px;
 }
 
 .icon--wifi,
-.icon--fire {
-height: 64px;
+.icon--fire,
+.icon--mail {
+height: 64px;}
+
+.icon--mail {
+height: 50px;
 }
+
+.icon--facebook {
+height: 44.23px;
+}
+
+.icon--youtube {
+height: 42.75px;
+}
+
