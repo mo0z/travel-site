@@ -10806,6 +10806,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+// import waypoints from 'waypoints';
+
 
 var _jquery = __webpack_require__(0);
 
@@ -10827,6 +10829,7 @@ var StickyHeader = function () {
   function StickyHeader() {
     _classCallCheck(this, StickyHeader);
 
+    this.lazyImages = (0, _jquery2.default)(".lazyload");
     this.siteHeader = (0, _jquery2.default)(".site-header");
     this.headerTriggerElement = (0, _jquery2.default)(".large-hero__title");
     this.createHeaderWaypoint();
@@ -10834,9 +10837,17 @@ var StickyHeader = function () {
     this.headerLinks = (0, _jquery2.default)(".primary-nav a");
     this.createPageSectionWaypoints();
     this.addSmoothScrolling();
+    this.refreshWaypoints();
   }
 
   _createClass(StickyHeader, [{
+    key: 'refreshWaypoints',
+    value: function refreshWaypoints() {
+      this.lazyImages.on('load', function () {
+        Waypoint.refreshAll();
+      });
+    }
+  }, {
     key: 'addSmoothScrolling',
     value: function addSmoothScrolling() {
       this.headerLinks.smoothScroll();
