@@ -8,6 +8,10 @@
     .icon {
       background-image: url('../../assets/images/sprites/{{{ sprite }}}');
     }
+
+    .no-svg .icon {
+      background-image: url('../../assets/images/sprites/{{ #replaceSvgWithPng }}{{{ sprite }}}{{ /replaceSvgWithPng }}');
+    }
   {{ /first }}
 
 .icon--{{ base }} {
@@ -24,4 +28,16 @@ height: 60px;
 .icon--wifi,
 .icon--fire {
 height: 64px;
+}
+
+.icon--mail {
+  height: 50px;
+}
+
+.icon--facebook {
+height: 44.23px;
+}
+
+.icon-youtube {
+  height: 41.75px;
 }
